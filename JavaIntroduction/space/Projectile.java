@@ -13,13 +13,7 @@ public class Projectile extends Actor
      */
     public void act() 
     {
-        move(10);
-        if ( atWorldEdge() ) {
-            destroy();
-        }
-        else {
-            checkForAsteroid();
-        }
+        
     }    
     
     /**
@@ -41,22 +35,6 @@ public class Projectile extends Actor
      */
     public boolean atWorldEdge()
     {
-        if ( getX() < 10 )
-        {
-            return true;
-        }
-        if ( getY() < 10 )
-        {
-            return true;
-        }
-        if ( getX() > 590 )
-        {
-            return true;
-        }
-        if ( getY() > 590 )
-        {
-            return true;
-        }
         return false;
     }
     
@@ -65,7 +43,6 @@ public class Projectile extends Actor
      */
     public void destroy()
     {
-        World w = getWorld();
-        w.removeObject(this);
+        
     }
 }

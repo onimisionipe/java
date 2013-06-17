@@ -1,1 +1,0 @@
-turtles is the first Java scenario that students will write code for.

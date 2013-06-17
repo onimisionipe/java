@@ -1,8 +1,13 @@
-import greenfoot.*; 
+/**
+ * This project is in the public domain hosted by TechLab Education, and is licensed under a Creative Commons 
+ * Attribution-NonCommercial-ShareAlike 3.0 Unported License.
+ */
+
+import greenfoot.*;
 
 /**
  * The Turtle class describes the behavior of all turtle objects.
- * @author Keshav Saharia
+ * @author (your name)
  */
 public class Turtle extends Animal
 {   
@@ -11,15 +16,6 @@ public class Turtle extends Animal
      */
     public void act()
     {
-        move(6);
-        if ( atWorldEdge() )
-        {
-            turn(7); 
-        }
-        if (canSee(Lettuce.class))
-        {
-            eat(Lettuce.class);
-        }
         
     }
 }

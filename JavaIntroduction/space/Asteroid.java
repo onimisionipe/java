@@ -24,22 +24,7 @@ public class Asteroid extends Actor
      */
     public void shrink()
     {
-        // get the image into a variable
-        GreenfootImage image = getImage();
-        // make a new width and height for the image
-        int x = image.getWidth() - 10;
-        int y = image.getHeight() - 10;
-        // if the width and height are valid for a new image
-        if (x > 0 && y > 0)
-        {
-            // then scale the image to the new width and height
-            image.scale(x, y);
-        }
-        else
-        {
-            // otherwise, destroy the asteroid
-            destroy();
-        }
+        
     }
     
     /**
@@ -47,7 +32,6 @@ public class Asteroid extends Actor
      */
     public void destroy()
     {
-        World w = getWorld();
-        w.removeObject(this);
+        
     }
 }

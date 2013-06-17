@@ -29,18 +29,7 @@ public class Rocket extends Actor
      */
     public void checkKeys()
     {
-        if ( Greenfoot.isKeyDown("left") )
-        {
-            turn(-5);
-        }
-        if ( Greenfoot.isKeyDown("up") )
-        {
-            move(5);
-        }
-        if ( Greenfoot.isKeyDown("right") )
-        {
-            turn(5);
-        }
+        
     }
     
     /**
@@ -49,14 +38,7 @@ public class Rocket extends Actor
      */
     public void checkFireKey()
     {
-        String key = Greenfoot.getKey();
-        if (key != null)
-        {
-            if ( key.equals("space") )
-            {
-                fireProjectile();
-            }
-        }
+        
     }
     
     /**
@@ -65,8 +47,7 @@ public class Rocket extends Actor
     public void checkForAsteroid()
     {
         Asteroid asteroid = (Asteroid) getOneObjectAtOffset(10, 10, Asteroid.class);
-        if ( asteroid != null )
-        {
+        if ( asteroid != null ) {
             subtractHealth();
         }
     }
@@ -77,14 +58,7 @@ public class Rocket extends Actor
      */
     public void fireProjectile()
     {
-        // make a new projectile
-        Projectile proj = new Projectile();
-        // tell my projectile to set its rotation to the rotation of the rocket
-        proj.setRotation( getRotation() );
-        // get my world
-        World world = getWorld();
-        // add the projectile to the world
-        world.addObject(proj, getX(), getY());
+        
     }
     
     /**
