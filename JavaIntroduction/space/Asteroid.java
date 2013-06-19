@@ -32,6 +32,7 @@ public class Asteroid extends Actor
      */
     public void destroy()
     {
-        
+        World space = getWorld();
+        space.removeObject(this);
     }
 }

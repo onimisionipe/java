@@ -29,7 +29,15 @@ public class Rocket extends Actor
      */
     public void checkKeys()
     {
-        
+        if (Greenfoot.isKeyDown("up")) {
+            move(5);
+        }
+        if (Greenfoot.isKeyDown("left")) {
+            turn(-5);
+        }
+        if (Greenfoot.isKeyDown("right")) {
+            turn(5);
+        }
     }
     
     /**
@@ -38,7 +46,13 @@ public class Rocket extends Actor
      */
     public void checkFireKey()
     {
-        
+        if (Greenfoot.isKeyDown("space")) {
+            World space = getWorld();
+            Projectile cookie = new Projectile();
+            space.addObject(cookie, getX(), getY());
+            int myrotation = getRotation();
+            cookie.setRotation(myrotation);
+        }
     }
     
     /**

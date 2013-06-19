@@ -14,6 +14,10 @@ public class HelloWorld
      */
     public static void main(String[] args)
     {
-        // Write your code here!
+        System.out.println("Hello World!");
+        
+        System.out.println("My name is Keshav!");
+        
+        System.out.println("My favorite food is " + "pizza");
     }
 }
