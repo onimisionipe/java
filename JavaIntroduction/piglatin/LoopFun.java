@@ -13,6 +13,7 @@ public class LoopFun
         int x = 1;
         while (x <= 20)
         {
+            System.out.println(x);
             x = x + 1;
         }
     }
@@ -22,7 +23,9 @@ public class LoopFun
      */
     public void looperScooper2()
     {
-        
+        for (int x = 1 ; x <= 20 ; x++) {
+            System.out.println(x);
+        }
     }
     
     /**
@@ -30,7 +33,10 @@ public class LoopFun
      */
     public void multiplesOf3()
     {
-        
+        for (int x = 0 ; x < 100 ; x = x + 3)
+        {
+            System.out.println(x);
+        }
     }
     
     /**
@@ -48,14 +54,19 @@ public class LoopFun
     
     public int remainderAfterDividing(int number, int by)
     {
-        return 0;
+        return number % by;
     }
     
     /**
      * Sum the multiples of 3 between 0 and 100.
      */
     public int sumMultiplesOfThree() {
-        return 0;
+        int sum = 0;
+        for (int x = 0 ; x < 100 ; x = x + 3)
+        {
+            sum = sum + x;
+        }
+        return sum;
     }
     
     /**
@@ -63,7 +74,15 @@ public class LoopFun
      * and 1000.
      */
     public int eulerProblemOne() {
-        return 0;
+        int sum = 0;
+        for (int i = 0 ; i < 10000000 ; i++)
+        {
+            if (i % 3 == 0 || i % 5 == 0)
+            {
+                sum = sum + i;
+            }
+        }
+        return sum;
     }
 
     /**

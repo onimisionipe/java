@@ -22,13 +22,22 @@ public class PigLatin
         return pigLatin.toString();
     }
     
-    public String convertWord(String input)
+    private String convertWord(String input)
     {
-        return input;
+        if ( isVowel( input.charAt(0) ) ) {
+            return input + "yay";
+        }
+        else {
+            return input.substring(1) + input.substring(0, 1) + "ay";
+        }
     }
     
     private boolean isVowel(char letter)
     {
+        if ( letter == 'a')
+        {
+            return true;
+        }
         return false;
     }
 }

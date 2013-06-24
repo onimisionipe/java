@@ -9,27 +9,27 @@ public class StringFun
     }
 
     public String firstLetter(String str) {
-        return "";
+        return str.substring(0, 1);
     }
     
     public String firstThreeLetters(String str) {
-        return "";
+        return str.substring(0, 3);
     }
     
     public String combine(String part1, String part2) {
-        return "";
+        return part1 + part2;
     }
     
     public String firstNLetters(String str, int n) {
-        return "";
+        return str.substring(0, n);
     }
     
     public String addFunnyEnding(String str) {
-        return "";
+        return str + "eth";
     }
     
     public boolean beginsWithA(String str) {
-        return false;
+        return firstLetter(str).equals("a");
     }
     
     public String reverse(String str) {
