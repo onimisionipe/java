@@ -1,3 +1,19 @@
+/**
+ Provided in 2013 TechLab Education
+ 
+ The MIT License (MIT)
+ 
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+ 
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+ */
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +27,7 @@ import javax.swing.*;
 
 @SuppressWarnings("serial")
 /**
- * Write a description of your applet here.
+ * A simple text editor view.
  * @author (your name) 
  */
 public class TextEditor extends JApplet 
@@ -21,6 +37,10 @@ public class TextEditor extends JApplet
 	// add components here
 	private JTextField field;
 	private JTextArea area;
+	
+	// Remember whether or not we have saved our work.
+	private boolean saved = false;
+	private String saveFile;
 
 	/**
 	 * Called by the browser or applet viewer to inform this JApplet that it has
@@ -28,13 +48,13 @@ public class TextEditor extends JApplet
 	 * that the start method is called.
 	 */
 	public void init() {
-		// create a model and view object
+		// Create a model and view object.
 		model = new TextEditorModel();
-		// set the size of this applet to the size that the view wants
+		// Set the size of this applet to the size that the view wants.
 		this.setSize(new Dimension(500, 500));
-		// make a new content pane to organize what we put into the applet
+		// Make a new content pane to organize what we put into the applet.
 		this.setLayout(new FlowLayout());
-		// initialize the components of this applet
+		
 		initializeComponents();
 	}
 
@@ -42,34 +62,11 @@ public class TextEditor extends JApplet
 	 * Initializes the components of this applet.
 	 */
 	public void initializeComponents() {
-		// initialize the buttons
-		// new file button
-		JButton newFile = new JButton("new");
-		newFile.setActionCommand("new");
-		newFile.addActionListener(this);
-		add(newFile);
-		// save file button
-		JButton saveFile = new JButton("save");
-		saveFile.setActionCommand("save");
-		saveFile.addActionListener(this);
-		add(saveFile);
-		// open file button
-		JButton openFile = new JButton("open");
-		openFile.setActionCommand("open");
-		openFile.addActionListener(this);
-		add(openFile);
-		// save as button
-		JButton saveAsFile = new JButton("save as");
-		saveAsFile.setActionCommand("save as");
-		saveAsFile.addActionListener(this);
-		add(saveAsFile);
-		// clear file button
-		JButton clearFile = new JButton("clear");
-		clearFile.setActionCommand("clear");
-		clearFile.addActionListener(this);
-		add(clearFile);
+		// Initialize the buttons.
 		
-		// text area
+		
+		
+		// Initializing a text area.
 		area = new JTextArea(30, 30);
 		add(area);
 	}
@@ -80,29 +77,30 @@ public class TextEditor extends JApplet
 	 */
 	public void actionPerformed(ActionEvent a) {
 		if (a.getSource() == field) {
-			// then our text field is sending us data
+			// Then our text field is sending us data.
 		}
 		else {
-			// otherwise, some other component is sending us data
+			// Otherwise, some other component is sending us data.
 			String action = a.getActionCommand();
 			if (action.equals("new")) {
 				
 			}
-			// get the file name to open, and set the text area to the contents
+			// Get the file name to open, then set the text area to the contents.
 			if (action.equals("open")) {
 				String fileName = JOptionPane.showInputDialog("What should I open?");
-				String text = model.openFile("/Users/Keshav/Desktop/" + fileName + ".txt");
-				area.setText(text);
+				// Your code here.
 			}
+			// Save the contents of the text area to a file, making a new file if necessary.
 			if (action.equals("save")) {
-				String fileName = JOptionPane.showInputDialog("What should I call this file?");
-				model.saveFile("/Users/Keshav/Desktop/" + fileName, area.getText());
+				// Your code here.
 			}
+			// Saves the contents of the text area to a new file, even if it has already been saved.
 			if (action.equals("save as")) {
-				
+				// Your code here.
 			}
+			// Clears the text editor.
 			if (action.equals("clear")) {
-				area.setText("");
+				// Your code here.
 			}
 		}
 	}
