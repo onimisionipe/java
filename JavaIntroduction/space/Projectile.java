@@ -13,10 +13,7 @@ public class Projectile extends Actor
      */
     public void act() 
     {
-        move(10);
-        if ( atWorldEdge()) {
-            destroy();
-        }
+		
     }    
     
     /**
@@ -38,13 +35,6 @@ public class Projectile extends Actor
      */
     public boolean atWorldEdge()
     {
-        int x = getX();
-        int y = getY();
-        
-        if ( x < 10 ) {
-            return true;
-        }
-        
         return false;
     }
     
